@@ -18,7 +18,7 @@ pravega:
   image:
     repository: pravega/pravega
   controllerReplicas: 1
-  segmentStoreReplicas: 1
+  segmentStoreReplicas: 3
   debugLogging: false
   cacheVolumeRequest: 20Gi
   storage:
