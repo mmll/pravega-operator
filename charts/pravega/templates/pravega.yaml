@@ -28,12 +28,16 @@ spec:
         cpu: "2000m"
     segmentStoreReplicas: {{ .Values.pravega.segmentStoreReplicas }}
     segmentStoreResources:
-      requests:
-        memory: "3Gi"
-        cpu: "1000m"
       limits:
-        memory: "5Gi"
-        cpu: "2000m"
+        cpu: {{ .Values.pravega_resources.segment_store.limits.cpu }}
+        memory: {{ .Values.pravega_resources.segment_store.limits.memory }}
+      requests:
+        cpu: {{ .Values.pravega_resources.segment_store.requests.cpu }}
+        memory: {{ .Values.pravega_resources.segment_store.requests.memory }}
+    segmentStoreJVMOptions:
+        {{- if .Values.segment_store_jvm_options }}
+{{ toYaml .Values.segment_store_jvm_options | indent 6 }}
+        {{- end }}
     debugLogging: {{ .Values.pravega.debugLogging }}
     cacheVolumeClaimTemplate:
       accessModes: [ "ReadWriteOnce" ]
