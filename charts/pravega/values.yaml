@@ -40,4 +40,13 @@ pravega_resources:
       cpu: 2000m
       memory: 4Gi
 controllerJvmOptions: ["-Xms512m"]
-segmentStoreJVMOptions: ["-Xmx4g", "-XX:MaxDirectMemorySize=12g"]
+segmentStoreJVMOptions: ["-Xmx8g", "-XX:MaxDirectMemorySize=16g"]
+options:
+  pravegaservice.cacheMaxSize: "11811160064"
+pravega_config:
+  write_size:
+    flushThresholdBytes: "67108864"
+pravega_options:
+  writer.flushThresholdMillis: "60000"
+  extendeds3.smallObjectSizeLimitForConcat: "104857600"
+  writer.maxRolloverSizeBytes: "6442450944"
