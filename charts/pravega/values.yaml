@@ -35,12 +35,12 @@ pravega_resources:
   segment_store:
     limits:
       cpu: 8000m
-      memory: 32Gi
+      memory: 20Gi
     requests:
       cpu: 2000m
       memory: 8Gi
 controllerJvmOptions: ["-Xms512m"]
-segmentStoreJVMOptions: ["-Xmx16g", "-XX:MaxDirectMemorySize=32g"]
+segmentStoreJVMOptions: ["-Xmx20g", "-XX:MaxDirectMemorySize=20g"]
 options:
   pravegaservice.cacheMaxSize: "8811160064"
 pravega_config:
