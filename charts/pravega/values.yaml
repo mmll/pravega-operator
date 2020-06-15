@@ -18,7 +18,7 @@ pravega:
   image:
     repository: pravega/pravega
   controllerReplicas: 1
-  segmentStoreReplicas: 6
+  segmentStoreReplicas: 3
   debugLogging: false
   cacheVolumeRequest: 20Gi
   storage:
@@ -35,12 +35,12 @@ pravega_resources:
   segment_store:
     limits:
       cpu: 8000m
-      memory: 20Gi
+      memory: 16Gi
     requests:
       cpu: 2000m
       memory: 8Gi
 controllerJvmOptions: ["-Xms512m"]
-segmentStoreJVMOptions: ["-Xmx20g", "-XX:MaxDirectMemorySize=20g"]
+segmentStoreJVMOptions: ["-Xmx20g", "-XX:MaxDirectMemorySize=16g"]
 options:
   pravegaservice.cacheMaxSize: "8811160064"
 pravega_config:
