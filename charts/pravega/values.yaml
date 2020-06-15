@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-version: 0.7.0
+version: 0.8.0-2539.d84a68cc5-1.2-dev-000.5b852dd
 zookeeperUri: zk-client:2181
 
 externalAccess:
@@ -17,6 +17,7 @@ bookkeeperUri: "pravega-bk-bookie-0.pravega-bk-bookie-headless.default.svc.clust
 pravega:
   image:
     repository: devops-repo.isus.emc.com:8116/nautilus/nautilus-pravega
+    tag: 0.8.0-2539.d84a68cc5-1.2-dev-000.5b852dd
   controllerReplicas: 1
   segmentStoreReplicas: 3
   debugLogging: false
