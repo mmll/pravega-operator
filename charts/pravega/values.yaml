@@ -2,7 +2,8 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-version: 0.8.0
+
+version: 0.8.0-2539.d84a68cc5-1.2-dev-000.5b852dd
 zookeeperUri: zk-client:2181
 
 externalAccess:
@@ -16,9 +17,10 @@ bookkeeperUri: "pravega-bk-bookie-0.pravega-bk-bookie-headless.default.svc.clust
 
 pravega:
   image:
-    repository: pravega/pravega
+    repository: devops-repo.isus.emc.com:8116/nautilus/nautilus-pravega
+    tag: 0.8.0-2539.d84a68cc5-1.2-dev-000.5b852dd
   controllerReplicas: 1
-  segmentStoreReplicas: 6
+  segmentStoreReplicas: 3
   debugLogging: false
   cacheVolumeRequest: 20Gi
   storage:
@@ -35,14 +37,14 @@ pravega_resources:
   segment_store:
     limits:
       cpu: 8000m
-      memory: 20Gi
+      memory: 12Gi
     requests:
       cpu: 2000m
       memory: 8Gi
 controllerJvmOptions: ["-Xms512m"]
-segmentStoreJVMOptions: ["-Xmx20g", "-XX:MaxDirectMemorySize=20g"]
+segmentStoreJVMOptions: ["-Xmx12g", "-XX:MaxDirectMemorySize=12g"]
 options:
-  pravegaservice.cacheMaxSize: "8811160064"
+  pravegaservice.cacheMaxSize: "6811160064"
 pravega_config:
   write_size:
     flushThresholdBytes: "67108864"
