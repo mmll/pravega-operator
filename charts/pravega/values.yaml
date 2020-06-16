@@ -44,7 +44,7 @@ pravega_resources:
 controllerJvmOptions: ["-Xms512m"]
 segmentStoreJVMOptions: ["-Xmx8g", "-XX:MaxDirectMemorySize=8g"]
 options:
-  pravegaservice.cacheMaxSize: "6811160064"
+  pravegaservice.cacheMaxSize: "5368709120"
 pravega_config:
   write_size:
     flushThresholdBytes: "67108864"
