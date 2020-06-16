@@ -37,19 +37,15 @@ pravega_resources:
   segment_store:
     limits:
       cpu: 8000m
-      memory: 12Gi
+      memory: 16Gi
     requests:
       cpu: 2000m
       memory: 8Gi
 controllerJvmOptions: ["-Xms512m"]
-segmentStoreJVMOptions: ["-Xmx12g", "-XX:MaxDirectMemorySize=12g"]
+segmentStoreJVMOptions: ["-Xmx16g", "-XX:MaxDirectMemorySize=16g"]
 options:
-  pravegaservice.cacheMaxSize: "8368709120"
-pravega_config:
-  write_size:
-    flushThresholdBytes: "67108864"
+  pravegaservice.cacheMaxSize: "12368709120"
 pravega_options:
-  writer.flushThresholdMillis: "60000"
   extendeds3.smallObjectSizeLimitForConcat: "104857600"
   writer.maxRolloverSizeBytes: "6442450944"
   metrics.dynamicCacheSize: "100000"
