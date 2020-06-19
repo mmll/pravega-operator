@@ -65,7 +65,7 @@ pravega_resources:
     metrics.statsdPort: "8125"
     metrics.enableInfluxDBReporter: "true"
     metrics.outputFrequencySeconds: "10"
-    metrics.influxDBURI: "http://192.168.241.97:8086"
+    metrics.influxDBURI: "http://192.168.246.36:8086"
     controller.metrics.dynamicCacheSize: "100000"
     controller.metrics.enableStatistics: "true"
     controller.metrics.enableStatsDReporter: "false"
@@ -73,6 +73,6 @@ pravega_resources:
     controller.metrics.statsdPort: "8125"
     controller.metrics.enableInfluxDBReporter: "true"
     controller.metrics.outputFrequencySeconds: "10"
-    controller.metrics.influxDBURI: "http://192.168.241.97:8086"
+    controller.metrics.influxDBURI: "http://192.168.246.36:8086"
     segmentStoreJVMOptions: ["-Xmx2g", "-XX:MaxDirectMemorySize=2g"]
 controllerJvmOptions: ["-Xms512m"]
