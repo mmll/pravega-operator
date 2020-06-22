@@ -20,7 +20,7 @@ pravega:
     repository: devops-repo.isus.emc.com:8116/nautilus/nautilus-pravega
     tag: 0.8.0-2539.d84a68cc5-1.2-dev-000.5b852dd
   controllerReplicas: 1
-  segmentStoreReplicas: 6
+  segmentStoreReplicas: 4
   debugLogging: false
   cacheVolumeRequest: 20Gi
   storage:
