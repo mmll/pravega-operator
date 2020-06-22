@@ -30,10 +30,10 @@ pravega_resources:
   controller:
     limits:
       cpu: 1000m
-      memory: 4Gi
+      memory: 8Gi
     requests:
       cpu: 500m
-      memory: 1Gi
+      memory: 4Gi
   segment_store:
     limits:
       cpu: 4000m
@@ -41,7 +41,7 @@ pravega_resources:
     requests:
       cpu: 1000m
       memory: 8Gi
-segmentStoreJVMOptions: ["-Xmx4g", "-XX:MaxDirectMemorySize=12g"]
+segmentStoreJVMOptions: ["-Xmx4g", "-XX:MaxDirectMemorySize=4g"]
 controllerJvmOptions: ["-Xms512m"]
 options:
   bookkeeper.bkEnsembleSize: "3"
@@ -49,7 +49,7 @@ options:
   bookkeeper.bkAckQuorumSize: "3"
   bookkeeper.bkWriteTimeoutMillis: "60000"
   bookkeeper.maxOutstandingBytes: "33554432"
-  pravegaservice.cacheMaxSize: "11811160064"
+  pravegaservice.cacheMaxSize: "3221225472"
   pravegaservice.cacheMaxTimeSeconds: "600"
   hdfs.blockSize: "67108864"
   writer.flushThresholdBytes: "67108864"
