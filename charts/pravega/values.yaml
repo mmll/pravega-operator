@@ -20,7 +20,7 @@ pravega:
     repository: devops-repo.isus.emc.com:8116/nautilus/nautilus-pravega
     tag: 0.8.0-2539.d84a68cc5-1.2-dev-000.5b852dd
   controllerReplicas: 1
-  segmentStoreReplicas: 9
+  segmentStoreReplicas: 6
   debugLogging: false
   cacheVolumeRequest: 20Gi
   storage:
@@ -30,18 +30,18 @@ pravega_resources:
   controller:
     limits:
       cpu: 1000m
-      memory: 2Gi
+      memory: 4Gi
     requests:
       cpu: 500m
       memory: 1Gi
   segment_store:
     limits:
       cpu: 4000m
-      memory: 8Gi
+      memory: 16Gi
     requests:
       cpu: 1000m
       memory: 8Gi
-segmentStoreJVMOptions: ["-Xmx4g", "-XX:MaxDirectMemorySize=4g"]
+segmentStoreJVMOptions: ["-Xmx4g", "-XX:MaxDirectMemorySize=12g"]
 controllerJvmOptions: ["-Xms512m"]
 options:
   bookkeeper.bkEnsembleSize: "3"
@@ -49,7 +49,7 @@ options:
   bookkeeper.bkAckQuorumSize: "3"
   bookkeeper.bkWriteTimeoutMillis: "60000"
   bookkeeper.maxOutstandingBytes: "33554432"
-  pravegaservice.cacheMaxSize: "3221225472"
+  pravegaservice.cacheMaxSize: "11811160064"
   pravegaservice.cacheMaxTimeSeconds: "600"
   hdfs.blockSize: "67108864"
   writer.flushThresholdBytes: "67108864"
