@@ -20,7 +20,7 @@ pravega:
     repository: devops-repo.isus.emc.com:8116/nautilus/nautilus-pravega
     tag: 0.8.0-2539.d84a68cc5-1.2-dev-000.5b852dd
   controllerReplicas: 1
-  segmentStoreReplicas: 1
+  segmentStoreReplicas: 3
   debugLogging: false
   cacheVolumeRequest: 20Gi
   storage:
@@ -29,11 +29,11 @@ pravega:
 pravega_resources:
   controller:
     limits:
-      cpu: 1000m
-      memory: 2Gi
+      cpu: 2000m
+      memory: 6Gi
     requests:
-      cpu: 500m
-      memory: 1Gi
+      cpu: 2000m
+      memory: 6Gi
   segment_store:
     limits:
       cpu: 2000m
