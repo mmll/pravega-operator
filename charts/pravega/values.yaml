@@ -17,7 +17,7 @@ bookkeeperUri: "pravega-bk-bookie-0.pravega-bk-bookie-headless.default.svc.clust
 
 pravega:
   image:
-    repository: devops-repo.isus.emc.com:8116/nautilus/nautilus-pravega
+    repository: andreykoltsov/pravega
     tag: 0.8.0-2539.d84a68cc5-1.2-dev-000.5b852dd
   controllerReplicas: 1
   segmentStoreReplicas: 3
@@ -64,8 +64,7 @@ options:
 
   # Doc update: https://github.com/pravega/pravega/pull/4862/files
 
-  # metrics.dynamicCacheSize: "100000"
-  
+  metrics.dynamicCache.size: "100000"
   metrics.statistics.enable: "true"
   # statsD metrics config
   metrics.statsD.reporter.enable: "true"
@@ -73,16 +72,21 @@ options:
   metrics.statsD.connect.port: "8125"
   # Influx DB Metrics config
   metrics.influxDB.reporter.enable: "true"
-  metrics.influxDB.connect.uri: "http://192.168.219.30:8086"
+  metrics.influxDB.connect.uri: "localhost:8086"
   metrics.influxDB.connect.db.name: "pravega"
   metrics.influxDB.retention: "two_hour"
   metrics.output.frequency.seconds: "10"
 
-  controller.metrics.dynamicCacheSize: "100000"
-  controller.metrics.enableStatistics: "true"
-  controller.metrics.enableStatsDReporter: "false"
-  controller.metrics.statsdHost: "telegraph.default"
-  controller.metrics.statsdPort: "8125"
-  controller.metrics.enableInfluxDBReporter: "true"
-  controller.metrics.outputFrequencySeconds: "10"
-  controller.metrics.influxDBURI: "http://192.168.219.30:8086"
+  # Controller metrics
+  controller.metrics.dynamicCache.size: "100000"
+  controller.metrics.statistics.enable: "true"
+  # statsD metrics config
+  controller.metrics.statsD.reporter.enable: "true"
+  controller.metrics.statsD.connect.host: "telegraph.default"
+  controller.metrics.statsD.connect.port: "8125"
+  # Influx DB Metrics config
+  controller.metrics.influxDB.reporter.enable: "true"
+  controller.metrics.influxDB.connect.uri: "localhost:8086"
+  controller.metrics.influxDB.connect.db.name: "pravega"
+  controller.metrics.influxDB.retention: "two_hour"
+  controller.metrics.output.frequency.seconds: "10"
