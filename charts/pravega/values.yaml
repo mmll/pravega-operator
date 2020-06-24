@@ -61,14 +61,23 @@ options:
   controller.service.asyncTaskPoolSize: "20"
   controller.retention.threadCount: "4"
   log.level: "INFO"
-  metrics.dynamicCacheSize: "100000"
-  metrics.enableStatistics: "true"
-  metrics.enableStatsDReporter: "false"
-  metrics.statsdHost: "telegraph.default"
-  metrics.statsdPort: "8125"
-  metrics.enableInfluxDBReporter: "true"
-  metrics.outputFrequencySeconds: "10"
-  metrics.influxDBURI: "http://192.168.219.30:8086"
+
+  # Doc update: https://github.com/pravega/pravega/pull/4862/files
+
+  # metrics.dynamicCacheSize: "100000"
+  
+  metrics.statistics.enable: "true"
+  # statsD metrics config
+  metrics.statsD.reporter.enable: "true"
+  metrics.statsD.connect.host: "telegraph.default"
+  metrics.statsD.connect.port: "8125"
+  # Influx DB Metrics config
+  metrics.influxDB.reporter.enable: "true"
+  metrics.influxDB.connect.uri: "http://192.168.219.30:8086"
+  metrics.influxDB.connect.db.name: "pravega"
+  metrics.influxDB.retention: "two_hour"
+  metrics.output.frequency.seconds: "10"
+
   controller.metrics.dynamicCacheSize: "100000"
   controller.metrics.enableStatistics: "true"
   controller.metrics.enableStatsDReporter: "false"
