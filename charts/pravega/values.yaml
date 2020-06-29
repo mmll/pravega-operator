@@ -19,7 +19,7 @@ bookkeeperUri: "prvgbk-pravega-bk-bookie-0.pravega-bk-bookie-headless.default.sv
 pravega:
   image:
     repository: devops-repo.isus.emc.com:8116/nautilus/nautilus-pravega
-    tag: 0.8.0-2539.d84a68cc5-1.2-dev-000.5b852dd
+    tag: 0.8.0-2577.15b0f5eb9
   controllerReplicas: 1
   segmentStoreReplicas: 3
   debugLogging: false
