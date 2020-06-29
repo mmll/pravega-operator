@@ -4,13 +4,13 @@
 
 
 version: 0.8.0-2539.d84a68cc5-1.2-dev-000.5b852dd
-zookeeperUri: zk-client:2181
+zookeeperUri: 10.107.135.47:2181
 externalAccess:
   enabled: false
   type: LoadBalancer
 serviceAccount:
   name: pravega-components
-bookkeeperUri: "prvgbk-pravega-bk-bookie-0.pravega-bk-bookie-headless.default.svc.cluster.local:3181,prvgbk-pravega-bk-bookie-1.pravega-bk-bookie-headless.default.svc.cluster.local:3181,prvgbk-pravega-bk-bookie-2.pravega-bk-bookie-headless.default.svc.cluster.local:3181"
+bookkeeperUri: 192.168.219.51:3181
 pravega:
   image:
     repository: devops-repo.isus.emc.com:8116/nautilus/nautilus-pravega
