@@ -4,23 +4,19 @@
 
 
 version: 0.8.0-2539.d84a68cc5-1.2-dev-000.5b852dd
-zookeeperUri: zk-client:2181
-
+zookeeperUri: 10.107.135.47:2181
 externalAccess:
   enabled: false
   type: LoadBalancer
-
 serviceAccount:
   name: pravega-components
-
-bookkeeperUri: "pravega-bk-bookie-0.pravega-bk-bookie-headless.default.svc.cluster.local:3181,pravega-bk-bookie-1.pravega-bk-bookie-headless.default.svc.cluster.local:3181,pravega-bk-bookie-2.pravega-bk-bookie-headless.default.svc.cluster.local:3181"
-
+bookkeeperUri: 192.168.219.51:3181
 pravega:
   image:
     repository: devops-repo.isus.emc.com:8116/nautilus/nautilus-pravega
-    tag: 0.8.0-2539.d84a68cc5-1.2-dev-000.5b852dd
+    tag: 0.8.0-2577.15b0f5eb9
   controllerReplicas: 1
-  segmentStoreReplicas: 3
+  segmentStoreReplicas: 5
   debugLogging: false
   cacheVolumeRequest: 20Gi
   storage:
@@ -30,10 +26,10 @@ pravega_resources:
   controller:
     limits:
       cpu: 2000m
-      memory: 6Gi
+      memory: 3Gi
     requests:
       cpu: 2000m
-      memory: 6Gi
+      memory: 3Gi
   segment_store:
     limits:
       cpu: 2000m
@@ -42,7 +38,6 @@ pravega_resources:
       cpu: 2000m
       memory: 8Gi
 segmentStoreJVMOptions: ["-Xmx4g", "-XX:MaxDirectMemorySize=12g"]
-
 controllerJvmOptions: ["-Xms512m"]
 options:
   bookkeeper.bkEnsembleSize: "3"
@@ -63,27 +58,21 @@ options:
   log.level: "INFO"
   metrics.dynamicCache.size: "100000"
   metrics.statistics.enable: "true"
-  # statsD metrics config
   metrics.statsD.reporter.enable: "true"
   metrics.statsD.connect.host: "telegraph.default"
   metrics.statsD.connect.port: "8125"
-  # Influx DB Metrics config
   metrics.influxDB.reporter.enable: "true"
-  metrics.influxDB.connect.uri: "localhost:8086"
+  metrics.influxDB.connect.uri: "192.168.219.39:8086"
   metrics.influxDB.connect.db.name: "pravega"
   metrics.influxDB.retention: "two_hour"
   metrics.output.frequency.seconds: "10"
-
-  # Controller metrics
   controller.metrics.dynamicCache.size: "100000"
   controller.metrics.statistics.enable: "true"
-  # statsD metrics config
   controller.metrics.statsD.reporter.enable: "true"
   controller.metrics.statsD.connect.host: "telegraph.default"
   controller.metrics.statsD.connect.port: "8125"
-  # Influx DB Metrics config
   controller.metrics.influxDB.reporter.enable: "true"
-  controller.metrics.influxDB.connect.uri: "localhost:8086"
+  controller.metrics.influxDB.connect.uri: "192.168.219.39:8086"
   controller.metrics.influxDB.connect.db.name: "pravega"
   controller.metrics.influxDB.retention: "two_hour"
   controller.metrics.output.frequency.seconds: "10"
