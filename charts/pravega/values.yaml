@@ -37,6 +37,7 @@ pravega_resources:
     requests:
       cpu: 2000m
       memory: 8Gi
+debugLogging: true
 segmentStoreJVMOptions: ["-Xmx3g", "-XX:MaxDirectMemorySize=6g"]
 controllerJvmOptions: ["-Xms512m"]
 options:
