@@ -33,7 +33,7 @@ pravega_resources:
   segment_store:
     limits:
       cpu: 3000m
-      memory: 12Gi
+      memory: 16Gi
     requests:
       cpu: 2000m
       memory: 8Gi
