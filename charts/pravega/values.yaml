@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 
-version: 0.8.0-2539.d84a68cc5-1.2-dev-000.5b852dd
+version: 0.8.0-2539.d84a68cc5
 zookeeperUri: 10.107.135.47:2181
 externalAccess:
   enabled: false
