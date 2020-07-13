@@ -16,7 +16,7 @@ pravega:
     repository: devops-repo.isus.emc.com:8116/nautilus/pravega
     tag: 0.8.0-2539.d84a68cc5
   controllerReplicas: 1
-  segmentStoreReplicas: 3
+  segmentStoreReplicas: 9
   debugLogging: false
   cacheVolumeRequest: 20Gi
   storage:
@@ -26,19 +26,19 @@ pravega_resources:
   controller:
     limits:
       cpu: 2000m
-      memory: 31Gi
+      memory: 3Gi
     requests:
       cpu: 2000m
       memory: 3Gi
   segment_store:
     limits:
       cpu: 3000m
-      memory: 16Gi
+      memory: 8Gi
     requests:
       cpu: 2000m
       memory: 8Gi
 debugLogging: true
-segmentStoreJVMOptions: ["-Xmx4g", "-XX:MaxDirectMemorySize=12g"]
+segmentStoreJVMOptions: ["-Xmx2g", "-XX:MaxDirectMemorySize=6g"]
 controllerJvmOptions: ["-Xms512m"]
 options:
   bookkeeper.bkEnsembleSize: "3"
@@ -46,7 +46,7 @@ options:
   bookkeeper.bkAckQuorumSize: "3"
   bookkeeper.bkWriteTimeoutMillis: "60000"
   bookkeeper.maxOutstandingBytes: "33554432"
-  pravegaservice.cacheMaxSize: "11811160064"
+  pravegaservice.cacheMaxSize: "4294967296"
   pravegaservice.cacheMaxTimeSeconds: "600"
   hdfs.blockSize: "67108864"
   writer.flushThresholdBytes: "67108864"
@@ -56,7 +56,7 @@ options:
   controller.retention.bucketCount: "4"
   controller.service.asyncTaskPoolSize: "20"
   controller.retention.threadCount: "4"
-  log.level: "INFO"
+  log.level: "DEBUG"
   metrics.dynamicCache.size: "100000"
   metrics.statistics.enable: "true"
   metrics.statsD.reporter.enable: "true"

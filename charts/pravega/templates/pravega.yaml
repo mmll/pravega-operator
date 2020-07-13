@@ -51,7 +51,7 @@ spec:
       bookkeeper.bkAckQuorumSize: "3"
       bookkeeper.bkWriteTimeoutMillis: "60000"
       bookkeeper.maxOutstandingBytes: "33554432"
-      pravegaservice.cacheMaxSize: "11811160064"
+      pravegaservice.cacheMaxSize: "4294967296"
       pravegaservice.cacheMaxTimeSeconds: "600"
       writer.flushThresholdBytes: "67108864"
       writer.maxFlushSizeBytes: "67108864"
@@ -69,7 +69,7 @@ spec:
       metrics.influxDB.reporter.enable: "true"
       metrics.influxDB.connect.uri: "http://192.168.219.39:8086"
       metrics.influxDB.connect.db.name: "pravega"
-      metrics.influxDB.retention: "two_hour"
+      metrics.influxDB.retention: "ten_day"
       metrics.output.frequency.seconds: "10"
       controller.metrics.dynamicCache.size: "100000"
       controller.metrics.statistics.enable: "true"
@@ -79,7 +79,7 @@ spec:
       controller.metrics.influxDB.reporter.enable: "true"
       controller.metrics.influxDB.connect.uri: "http://192.168.219.39:8086"
       controller.metrics.influxDB.connect.db.name: "pravega"
-      controller.metrics.influxDB.retention: "two_hour"
+      controller.metrics.influxDB.retention: "ten_day"
       controller.metrics.output.frequency.seconds: "10"
     longtermStorage:
       filesystem:
