@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 
-version: 0.8.0-2539.d84a68cc5
+version: 0.8.0-2578.de7f43537
 zookeeperUri: 10.107.135.47:2181
 externalAccess:
   enabled: false
@@ -14,7 +14,7 @@ bookkeeperUri: 192.168.219.51:3181
 pravega:
   image:
     repository: devops-repo.isus.emc.com:8116/nautilus/pravega
-    tag: 0.8.0-2539.d84a68cc5
+    tag: 0.8.0-2578.de7f43537
   controllerReplicas: 1
   segmentStoreReplicas: 9
   debugLogging: false
@@ -65,7 +65,7 @@ options:
   metrics.influxDB.reporter.enable: "true"
   metrics.influxDB.connect.uri: "192.168.219.39:8086"
   metrics.influxDB.connect.db.name: "pravega"
-  metrics.influxDB.retention: "two_hour"
+  metrics.influxDB.retention: "one_month"
   metrics.output.frequency.seconds: "10"
   controller.metrics.dynamicCache.size: "100000"
   controller.metrics.statistics.enable: "true"
@@ -75,5 +75,5 @@ options:
   controller.metrics.influxDB.reporter.enable: "true"
   controller.metrics.influxDB.connect.uri: "192.168.219.39:8086"
   controller.metrics.influxDB.connect.db.name: "pravega"
-  controller.metrics.influxDB.retention: "two_hour"
+  controller.metrics.influxDB.retention: "one_month"
   controller.metrics.output.frequency.seconds: "10"
