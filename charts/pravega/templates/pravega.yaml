@@ -69,7 +69,7 @@ spec:
       metrics.influxDB.reporter.enable: "true"
       metrics.influxDB.connect.uri: "http://192.168.219.39:8086"
       metrics.influxDB.connect.db.name: "pravega"
-      metrics.influxDB.retention: "one_month"
+      metrics.influxDB.retention: "two_hour"
       metrics.output.frequency.seconds: "10"
       controller.metrics.dynamicCache.size: "100000"
       controller.metrics.statistics.enable: "true"
@@ -79,7 +79,7 @@ spec:
       controller.metrics.influxDB.reporter.enable: "true"
       controller.metrics.influxDB.connect.uri: "http://192.168.219.39:8086"
       controller.metrics.influxDB.connect.db.name: "pravega"
-      controller.metrics.influxDB.retention: "one_month"
+      controller.metrics.influxDB.retention: "two_hour"
       controller.metrics.output.frequency.seconds: "10"
     longtermStorage:
       filesystem:
