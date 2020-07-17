@@ -16,7 +16,7 @@ pravega:
     repository: devops-repo.isus.emc.com:8116/nautilus/pravega
     tag: 0.8.0-2588.326fc55a2
   controllerReplicas: 1
-  segmentStoreReplicas: 6
+  segmentStoreReplicas: 4
   debugLogging: false
   cacheVolumeRequest: 20Gi
   storage:
@@ -32,13 +32,13 @@ pravega_resources:
       memory: 3Gi
   segment_store:
     limits:
-      cpu: 3000m
-      memory: 6Gi
+      cpu: 4000m
+      memory: 16Gi
     requests:
       cpu: 2000m
-      memory: 6Gi
+      memory: 12Gi
 debugLogging: true
-segmentStoreJVMOptions: ["-Xmx1g", "-XX:MaxDirectMemorySize=5g"]
+segmentStoreJVMOptions: ["-Xmx4g", "-XX:MaxDirectMemorySize=12g"]
 controllerJvmOptions: ["-Xms512m"]
 options:
   bookkeeper.bkEnsembleSize: "3"
@@ -46,7 +46,7 @@ options:
   bookkeeper.bkAckQuorumSize: "3"
   bookkeeper.bkWriteTimeoutMillis: "60000"
   bookkeeper.maxOutstandingBytes: "33554432"
-  pravegaservice.cacheMaxSize: "3221225472"
+  pravegaservice.cacheMaxSize: "10737418240"
   pravegaservice.cacheMaxTimeSeconds: "600"
   hdfs.blockSize: "67108864"
   writer.flushThresholdBytes: "67108864"
@@ -63,7 +63,7 @@ options:
   metrics.statsD.connect.host: "telegraph.default"
   metrics.statsD.connect.port: "8125"
   metrics.influxDB.reporter.enable: "true"
-  metrics.influxDB.connect.uri: "192.168.219.39:8086"
+  metrics.influxDB.connect.uri: "192.168.219.57:8086"
   metrics.influxDB.connect.db.name: "pravega"
   metrics.influxDB.retention: "two_hour"
   metrics.output.frequency.seconds: "10"
@@ -73,7 +73,7 @@ options:
   controller.metrics.statsD.connect.host: "telegraph.default"
   controller.metrics.statsD.connect.port: "8125"
   controller.metrics.influxDB.reporter.enable: "true"
-  controller.metrics.influxDB.connect.uri: "192.168.219.39:8086"
+  controller.metrics.influxDB.connect.uri: "192.168.219.57:8086"
   controller.metrics.influxDB.connect.db.name: "pravega"
   controller.metrics.influxDB.retention: "two_hour"
   controller.metrics.output.frequency.seconds: "10"
