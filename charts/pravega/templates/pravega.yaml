@@ -50,7 +50,7 @@ spec:
       bookkeeper.bkWriteQuorumSize: "3"
       bookkeeper.bkAckQuorumSize: "3"
       bookkeeper.bkWriteTimeoutMillis: "60000"
-      bookkeeper.maxOutstandingBytes: "33554432"
+      bookkeeper.maxOutstandingBytes: "8388608"
       pravegaservice.cacheMaxSize: "10737418240"
       pravegaservice.cacheMaxTimeSeconds: "600"
       writer.flushThresholdBytes: "67108864"
