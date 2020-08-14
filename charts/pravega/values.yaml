@@ -38,7 +38,7 @@ pravega_resources:
       cpu: 2000m
       memory: 12Gi
 debugLogging: true
-segmentStoreJVMOptions: ["-Xms4g","-Xmx4g", "-XX:MaxDirectMemorySize=10g", "-XX:+UseG1GC", "-XX:MaxGCPauseMillis=100", "-XX:+ParallelRefProcEnabled", "-XX:+AggressiveOpts", "-XX:ParallelGCThreads=8", "-XX:ConcGCThreads=4"]
+segmentStoreJVMOptions: ["-Xmx4g", "-XX:MaxDirectMemorySize=12g"]
 controllerJvmOptions: ["-Xms512m"]
 options:
   bookkeeper.ensemble.size: "3"
@@ -55,7 +55,7 @@ options:
   controller.retention.bucketCount: "8"
   controller.service.asyncTaskPoolSize: "20"
   controller.retention.threadCount: "4"
-  log.level: "DEBUG"
+  log.level: "INFO"
   metrics.dynamicCache.size: "100000"
   metrics.statistics.enable: "true"
   metrics.statsD.reporter.enable: "true"
