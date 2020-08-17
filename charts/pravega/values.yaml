@@ -66,7 +66,7 @@ options:
   metrics.influxDB.connect.db.name: "pravega"
   metrics.influxDB.retention: "two_hour"
   metrics.output.frequency.seconds: "10"
-  controller.metrics.dynamicCache.size: "100000"
+  controller.metrics.dynamicCache.size: "2000"
   controller.metrics.statistics.enable: "true"
   controller.metrics.statsD.reporter.enable: "true"
   controller.metrics.statsD.connect.host: "telegraph.default"
