@@ -33,12 +33,12 @@ pravega_resources:
   segment_store:
     limits:
       cpu: 4000m
-      memory: 8Gi
+      memory: 5Gi
     requests:
       cpu: 2000m
-      memory: 8Gi
+      memory: 5Gi
 debugLogging: true
-segmentStoreJVMOptions: ["-Xmx4g", "-XX:MaxDirectMemorySize=4g"]
+segmentStoreJVMOptions: ["-Xmx2g", "-XX:MaxDirectMemorySize=3g"]
 controllerJvmOptions: ["-Xms512m"]
 options:
   bookkeeper.ensemble.size: "3"
