@@ -38,7 +38,7 @@ pravega_resources:
       cpu: 2000m
       memory: 12Gi
 debugLogging: true
-segmentStoreJVMOptions: ["-Xmx4g", "-XX:MaxDirectMemorySize=1.5g"]
+segmentStoreJVMOptions: ["-Xmx4g", "-XX:MaxDirectMemorySize=2g"]
 controllerJvmOptions: ["-Xms512m"]
 options:
   bookkeeper.ensemble.size: "3"
