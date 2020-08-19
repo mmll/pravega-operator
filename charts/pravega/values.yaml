@@ -25,20 +25,20 @@ pravega:
 pravega_resources:
   controller:
     limits:
-      cpu: 2000m
-      memory: 3Gi
+      cpu: 500m
+      memory: 1Gi
     requests:
-      cpu: 2000m
-      memory: 3Gi
+      cpu: 1000m
+      memory: 2Gi
   segment_store:
     limits:
       cpu: 4000m
-      memory: 16Gi
+      memory: 8Gi
     requests:
       cpu: 2000m
-      memory: 12Gi
+      memory: 8Gi
 debugLogging: true
-segmentStoreJVMOptions: ["-Xmx4g", "-XX:MaxDirectMemorySize=2g"]
+segmentStoreJVMOptions: ["-Xmx4g", "-XX:MaxDirectMemorySize=4g"]
 controllerJvmOptions: ["-Xms512m"]
 options:
   bookkeeper.ensemble.size: "3"
@@ -46,7 +46,7 @@ options:
   bookkeeper.ack.quorum.size: "3"
   bookkeeper.write.timeout.milliseconds: "60000"
   bookkeeper.write.outstanding.bytes.max: "33554432"
-  pravegaservice.cache.size.max: "5737418240"
+  pravegaservice.cache.size.max: "2147483648"
   pravegaservice.cache.time.seconds.max: "600"
   writer.flush.threshold.bytes: "67108864"
   writer.flush.size.bytes.max: "67108864"
@@ -68,7 +68,7 @@ options:
   metrics.output.frequency.seconds: "10"
   controller.metrics.dynamicCache.size: "2000"
   controller.metrics.statistics.enable: "true"
-  controller.metrics.statsD.reporter.enable: "true"
+  controller.metrics.statsD.reporter.enable: "false"
   controller.metrics.statsD.connect.host: "10.103.131.170"
   controller.metrics.statsD.connect.port: "8125"
   controller.metrics.influxDB.reporter.enable: "true"
