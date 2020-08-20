@@ -38,7 +38,7 @@ pravega_resources:
       cpu: 2000m
       memory: 5Gi
 debugLogging: true
-segmentStoreJVMOptions: ["-Xmx2g", "-XX:MaxDirectMemorySize=2g","-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/opt/", "-XX:NativeMemoryTracking=detail"]
+segmentStoreJVMOptions: ["-Xmx2g", "-XX:MaxDirectMemorySize=2g","-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/opt/" ]
 controllerJvmOptions: ["-Xms512m"]
 options:
   bookkeeper.ensemble.size: "3"
