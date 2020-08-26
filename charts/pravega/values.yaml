@@ -41,7 +41,7 @@ debugLogging: true
 segmentStoreJVMOptions: ["-Xmx2g", "-XX:MaxDirectMemorySize=2g","-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/"]
 controllerJvmOptions: ["-Xms512m"]
 options:
-  bookkeeper.ensemble.size: "3"
+  bookkeeper.ensemble.size: "8"
   bookkeeper.write.quorum.size: "3"
   bookkeeper.ack.quorum.size: "3"
   bookkeeper.write.timeout.milliseconds: "60000"
