@@ -16,7 +16,7 @@ pravega:
     repository: devops-repo.isus.emc.com:8116/nautilus/pravega
     tag: 0.8.0-2593.6e882cf4f
   controllerReplicas: 2
-  segmentStoreReplicas: 8
+  segmentStoreReplicas: 4
   debugLogging: false
   cacheVolumeRequest: 20Gi
   storage:
@@ -32,10 +32,10 @@ pravega_resources:
       memory: 2Gi
   segment_store:
     limits:
-      cpu: 2000m
+      cpu: 4000m
       memory: 5Gi
     requests:
-      cpu: 1000m
+      cpu: 2000m
       memory: 5Gi
 debugLogging: true
 segmentStoreJVMOptions: ["-Xmx2g", "-XX:MaxDirectMemorySize=2g","-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/"]
@@ -50,8 +50,8 @@ options:
   pravegaservice.cache.time.seconds.max: "600"
   writer.flush.threshold.bytes: "67108864"
   writer.flush.size.bytes.max: "67108864"
-  pravegaservice.container.count: "64"
-  controller.containerCount: "64"
+  pravegaservice.container.count: "32"
+  controller.containerCount: "32"
   controller.retention.bucketCount: "8"
   controller.service.asyncTaskPoolSize: "20"
   controller.retention.threadCount: "4"
