@@ -16,7 +16,7 @@ pravega:
     repository: devops-repo.isus.emc.com:8116/nautilus/pravega
     tag: 0.8.0-2593.6e882cf4f
   controllerReplicas: 2
-  segmentStoreReplicas: 4
+  segmentStoreReplicas: 8
   debugLogging: false
   cacheVolumeRequest: 20Gi
   storage:
@@ -50,8 +50,8 @@ options:
   pravegaservice.cache.time.seconds.max: "600"
   writer.flush.threshold.bytes: "67108864"
   writer.flush.size.bytes.max: "67108864"
-  pravegaservice.container.count: "32"
-  controller.containerCount: "32"
+  pravegaservice.container.count: "64"
+  controller.containerCount: "64"
   controller.retention.bucketCount: "8"
   controller.service.asyncTaskPoolSize: "20"
   controller.retention.threadCount: "4"
