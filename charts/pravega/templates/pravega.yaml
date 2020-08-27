@@ -46,7 +46,7 @@ spec:
         requests:
           storage: {{ .Values.pravega.cacheVolumeRequest }}
     options:
-      bookkeeper.ensemble.size: "8"
+      bookkeeper.ensemble.size: "3"
       bookkeeper.write.quorum.size: "3"
       bookkeeper.ack.quorum.size: "3"
       bookkeeper.write.timeout.milliseconds: "60000"
