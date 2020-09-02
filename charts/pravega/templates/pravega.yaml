@@ -50,7 +50,7 @@ spec:
       bookkeeper.write.quorum.size: "3"
       bookkeeper.ack.quorum.size: "3"
       pravegaservice.storage.layout: "CHUNKED_STORAGE"
-      storage.appends.enable: "false"
+      storage.appends.enable: "true"
       bookkeeper.write.timeout.milliseconds: "60000"
       bookkeeper.write.outstanding.bytes.max: "33554432"
       pravegaservice.cache.size.max: "1073741824"
