@@ -16,7 +16,7 @@ pravega:
     repository: devops-repo.isus.emc.com:8116/nautilus/pravega
     tag: 0.8.0-2625.f8d5bbb07-r0.8
   controllerReplicas: 1
-  segmentStoreReplicas: 4
+  segmentStoreReplicas: 1
   debugLogging: false
   cacheVolumeRequest: 20Gi
   storage:
@@ -64,7 +64,7 @@ options:
   metrics.statsD.connect.host: "10.103.131.170"
   metrics.statsD.connect.port: "8125"
   metrics.influxDB.reporter.enable: "true"
-  metrics.influxDB.connect.uri: "http://192.168.246.24:8086"
+  metrics.influxDB.connect.uri: "http://192.168.240.19:8086"
   metrics.influxDB.connect.db.name: "pravega"
   metrics.influxDB.retention: "two_hour"
   metrics.output.frequency.seconds: "10"
@@ -74,7 +74,7 @@ options:
   controller.metrics.statsD.connect.host: "10.103.131.170"
   controller.metrics.statsD.connect.port: "8125"
   controller.metrics.influxDB.reporter.enable: "true"
-  controller.metrics.influxDB.connect.uri: "http://192.168.246.24:8086"
+  controller.metrics.influxDB.connect.uri: "http://192.168.240.19:8086"
   controller.metrics.influxDB.connect.db.name: "pravega"
   controller.metrics.influxDB.retention: "two_hour"
   controller.metrics.output.frequency.seconds: "10"
