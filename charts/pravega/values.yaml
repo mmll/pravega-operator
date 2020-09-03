@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 
-version: 0.8.0-2625.f8d5bbb07-r0.8
+version: 0.9.0-2634.29bb64c8e
 zookeeperUri: 10.107.135.47:2181
 externalAccess:
   enabled: false
@@ -14,9 +14,9 @@ bookkeeperUri: 192.168.219.51:3181
 pravega:
   image:
     repository: devops-repo.isus.emc.com:8116/nautilus/pravega
-    tag: 0.8.0-2625.f8d5bbb07-r0.8
+    tag: 0.9.0-2634.29bb64c8e
   controllerReplicas: 1
-  segmentStoreReplicas: 1
+  segmentStoreReplicas: 4
   debugLogging: false
   cacheVolumeRequest: 20Gi
   storage:
@@ -48,8 +48,8 @@ options:
   bookkeeper.write.outstanding.bytes.max: "33554432"
   pravegaservice.cache.size.max: "1073741824"
   pravegaservice.cache.time.seconds.max: "600"
-#  pravegaservice.storage.layout: "ROLLING_STORAGE"
-#  storage.appends.enable: "true"
+  pravegaservice.storage.layout: "ROLLING_STORAGE"
+  storage.appends.enable: "true"
   writer.flush.threshold.bytes: "67108864"
   writer.flush.size.bytes.max: "67108864"
   pravegaservice.container.count: "32"
@@ -64,7 +64,7 @@ options:
   metrics.statsD.connect.host: "10.103.131.170"
   metrics.statsD.connect.port: "8125"
   metrics.influxDB.reporter.enable: "true"
-  metrics.influxDB.connect.uri: "http://192.168.240.19:8086"
+  metrics.influxDB.connect.uri: "http://192.168.246.24:8086"
   metrics.influxDB.connect.db.name: "pravega"
   metrics.influxDB.retention: "two_hour"
   metrics.output.frequency.seconds: "10"
@@ -74,7 +74,7 @@ options:
   controller.metrics.statsD.connect.host: "10.103.131.170"
   controller.metrics.statsD.connect.port: "8125"
   controller.metrics.influxDB.reporter.enable: "true"
-  controller.metrics.influxDB.connect.uri: "http://192.168.240.19:8086"
+  controller.metrics.influxDB.connect.uri: "http://192.168.246.24:8086"
   controller.metrics.influxDB.connect.db.name: "pravega"
   controller.metrics.influxDB.retention: "two_hour"
   controller.metrics.output.frequency.seconds: "10"
