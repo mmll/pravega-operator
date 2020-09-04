@@ -48,7 +48,7 @@ options:
   bookkeeper.write.outstanding.bytes.max: "33554432"
   pravegaservice.cache.size.max: "1073741824"
   pravegaservice.cache.time.seconds.max: "600"
-  pravegaservice.storage.layout: "ROLLING_STORAGE"
+  pravegaservice.storage.layout: "CHUNKED_STORAGE"
   storage.appends.enable: "true"
   writer.flush.threshold.bytes: "67108864"
   writer.flush.size.bytes.max: "67108864"
