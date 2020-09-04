@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 
-version: 0.8.0-2620.3de37a4a
+version: 0.8.0-2593.6e882cf4f
 zookeeperUri: 10.107.135.47:2181
 externalAccess:
   enabled: false
@@ -14,7 +14,7 @@ bookkeeperUri: 192.168.219.51:3181
 pravega:
   image:
     repository: devops-repo.isus.emc.com:8116/nautilus/pravega
-    tag: 0.8.0-2620.3de37a4a
+    tag: 0.8.0-2593.6e882cf4f
   controllerReplicas: 1
   segmentStoreReplicas: 4
   debugLogging: false
