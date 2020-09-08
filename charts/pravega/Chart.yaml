@@ -1,6 +1,6 @@
 name: pravega
-version: 0.8.0-2539.d84a68cc5-1.2-dev-000.5b852dd
-appVersion: 0.8.0-2539.d84a68cc5-1.2-dev-000.5b852dd
+version: 0.8.0-2600.4df7f9a4d-1.2-W8-2-e554360
+appVersion: 0.8.0-2600.4df7f9a4d-1.2-W8-2-e554360
 description: pravega Helm chart for Kubernetes
 keywords:
 - pravega
