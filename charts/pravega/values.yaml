@@ -16,7 +16,7 @@ pravega:
     repository: devops-repo.isus.emc.com:8116/nautilus/nautilus-pravega
     tag: 0.8.0-2600.4df7f9a4d-1.2-W8-2-e554360
   controllerReplicas: 1
-  segmentStoreReplicas: 4
+  segmentStoreReplicas: 1
   debugLogging: false
   cacheVolumeRequest: 20Gi
   storage:
@@ -33,47 +33,47 @@ pravega_resources:
   segment_store:
     limits:
       cpu: 2000m
-      memory: 5Gi
+      memory: 3Gi
     requests:
       cpu: 1000m
-      memory: 4Gi
+      memory: 3Gi
 debugLogging: true
-segmentStoreJVMOptions: ["-Xmx2g", "-XX:MaxDirectMemorySize=2g","-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/"]
+segmentStoreJVMOptions: ["-Xmx1g", "-XX:MaxDirectMemorySize=1g","-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/"]
 controllerJvmOptions: ["-Xms512m"]
 options:
-  bookkeeper.ensemble.size: "3"
-  bookkeeper.write.quorum.size: "3"
-  bookkeeper.ack.quorum.size: "3"
+  bookkeeper.ensemble.size: "1"
+  bookkeeper.write.quorum.size: "1"
+  bookkeeper.ack.quorum.size: "1"
   bookkeeper.write.timeout.milliseconds: "60000"
   bookkeeper.write.outstanding.bytes.max: "33554432"
-  pravegaservice.cache.size.max: "1073741824"
+#  pravegaservice.cache.size.max: "1073741824"
   pravegaservice.cache.time.seconds.max: "600"
 #  pravegaservice.storage.layout: "CHUNKED_STORAGE"
 #  storage.appends.enable: "true"
   writer.flush.threshold.bytes: "67108864"
   writer.flush.size.bytes.max: "67108864"
-  pravegaservice.container.count: "32"
-  controller.containerCount: "32"
+  pravegaservice.container.count: "8"
+  controller.containerCount: "8"
   controller.retention.bucketCount: "8"
   controller.service.asyncTaskPoolSize: "20"
   controller.retention.threadCount: "4"
   log.level: "INFO"
   metrics.dynamicCache.size: "2000"
-  metrics.statistics.enable: "true"
+  metrics.statistics.enable: "false"
   metrics.statsD.reporter.enable: "false"
   metrics.statsD.connect.host: "10.103.131.170"
   metrics.statsD.connect.port: "8125"
-  metrics.influxDB.reporter.enable: "true"
+  metrics.influxDB.reporter.enable: "false"
   metrics.influxDB.connect.uri: "http://192.168.241.84:8086"
   metrics.influxDB.connect.db.name: "pravega"
   metrics.influxDB.retention: "two_hour"
   metrics.output.frequency.seconds: "10"
   controller.metrics.dynamicCache.size: "2000"
-  controller.metrics.statistics.enable: "true"
+  controller.metrics.statistics.enable: "false"
   controller.metrics.statsD.reporter.enable: "false"
   controller.metrics.statsD.connect.host: "10.103.131.170"
   controller.metrics.statsD.connect.port: "8125"
-  controller.metrics.influxDB.reporter.enable: "true"
+  controller.metrics.influxDB.reporter.enable: "false"
   controller.metrics.influxDB.connect.uri: "http://192.168.241.84:8086"
   controller.metrics.influxDB.connect.db.name: "pravega"
   controller.metrics.influxDB.retention: "two_hour"
