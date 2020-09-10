@@ -13,7 +13,7 @@ serviceAccount:
 bookkeeperUri: 192.168.219.51:3181
 pravega:
   image:
-    repository: devops-repo.isus.emc.com:8116/nautilus/nautilus-pravega
+    repository: devops-repo.isus.emc.com:8116/nautilus/pravega
     tag: 0.9.0-2641.0c98b91cd
   controllerReplicas: 1
   segmentStoreReplicas: 4
