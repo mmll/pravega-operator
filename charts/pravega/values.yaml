@@ -1,8 +1,6 @@
 # Default values for pravega.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-
-
 version: 0.9.0-2641.0c98b91cd
 zookeeperUri: 10.107.135.47:2181
 externalAccess:
@@ -64,7 +62,7 @@ options:
   metrics.statsD.connect.host: "10.103.131.170"
   metrics.statsD.connect.port: "8125"
   metrics.influxDB.reporter.enable: "true"
-  metrics.influxDB.connect.uri: "http://192.168.241.84:8086"
+  metrics.influxDB.connect.uri: "http://192.168.210.78:8086"
   metrics.influxDB.connect.db.name: "pravega"
   metrics.influxDB.retention: "two_hour"
   metrics.output.frequency.seconds: "10"
@@ -74,10 +72,9 @@ options:
   controller.metrics.statsD.connect.host: "10.103.131.170"
   controller.metrics.statsD.connect.port: "8125"
   controller.metrics.influxDB.reporter.enable: "true"
-  controller.metrics.influxDB.connect.uri: "http://192.168.241.84:8086"
+  controller.metrics.influxDB.connect.uri: "http://192.168.210.78:8086"
   controller.metrics.influxDB.connect.db.name: "pravega"
   controller.metrics.influxDB.retention: "two_hour"
   controller.metrics.output.frequency.seconds: "10"
   pravegaservice.zk.connect.sessionTimeout.milliseconds: "30000"
   bookkeeper.zk.connect.sessionTimeout.milliseconds: "15000"
-
