@@ -1,6 +1,8 @@
 # Default values for pravega.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
+
+
 version: 0.9.0-2641.0c98b91cd
 zookeeperUri: 10.107.135.47:2181
 externalAccess:
@@ -31,12 +33,12 @@ pravega_resources:
   segment_store:
     limits:
       cpu: 2000m
-      memory: 5Gi
+      memory: 4Gi
     requests:
       cpu: 1000m
-      memory: 5Gi
+      memory: 4Gi
 debugLogging: true
-segmentStoreJVMOptions: ["-Xmx2g", "-XX:MaxDirectMemorySize=2g","-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/"]
+segmentStoreJVMOptions: ["-Xmx1536m", "-XX:MaxDirectMemorySize=1536m","-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/"]
 controllerJvmOptions: ["-Xms512m"]
 options:
   bookkeeper.ensemble.size: "3"
@@ -59,22 +61,23 @@ options:
   metrics.dynamicCache.size: "2000"
   metrics.statistics.enable: "true"
   metrics.statsD.reporter.enable: "true"
-  metrics.statsD.connect.host: "10.100.36.172"
-  metrics.statsD.connect.port: "11002"
-#  metrics.influxDB.reporter.enable: "true"
-#  metrics.influxDB.connect.uri: "http://192.168.210.78:8086"
+#  metrics.statsD.connect.host: "deploy-ecs-141-telegraf.default.svc.cluster.local"
+#  metrics.statsD.connect.port: "11002"
+  metrics.influxDB.reporter.enable: "true"
+  metrics.influxDB.connect.uri: "http://192.168.241.84:8086"
   metrics.influxDB.connect.db.name: "pravega"
   metrics.influxDB.retention: "two_hour"
   metrics.output.frequency.seconds: "10"
   controller.metrics.dynamicCache.size: "2000"
   controller.metrics.statistics.enable: "true"
   controller.metrics.statsD.reporter.enable: "true"
-  controller.metrics.statsD.connect.host: "10.100.36.172"
-  controller.metrics.statsD.connect.port: "11002"
-#  controller.metrics.influxDB.reporter.enable: "true"
-#  controller.metrics.influxDB.connect.uri: "http://192.168.210.78:8086"
+#  controller.metrics.statsD.connect.host: "deploy-ecs-141-telegraf.default.svc.cluster.local"
+#  controller.metrics.statsD.connect.port: "11002"
+  controller.metrics.influxDB.reporter.enable: "true"
+  controller.metrics.influxDB.connect.uri: "http://192.168.241.84:8086"
   controller.metrics.influxDB.connect.db.name: "pravega"
   controller.metrics.influxDB.retention: "two_hour"
   controller.metrics.output.frequency.seconds: "10"
   pravegaservice.zk.connect.sessionTimeout.milliseconds: "30000"
   bookkeeper.zk.connect.sessionTimeout.milliseconds: "15000"
+
