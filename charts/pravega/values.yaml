@@ -15,8 +15,8 @@ pravega:
   image:
     repository: devops-repo.isus.emc.com:8116/nautilus/nautilus-pravega
     tag: 0.8.0-2600.4df7f9a4d-1.2-W8-2-e554360
-  controllerReplicas: 1
-  segmentStoreReplicas: 1
+  controllerReplicas: 2
+  segmentStoreReplicas: 4
   debugLogging: false
   cacheVolumeRequest: 20Gi
   storage:
@@ -41,9 +41,9 @@ debugLogging: true
 segmentStoreJVMOptions: ["-Xmx1g", "-XX:MaxDirectMemorySize=1g","-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/"]
 controllerJvmOptions: ["-Xms512m"]
 options:
-  bookkeeper.ensemble.size: "1"
-  bookkeeper.write.quorum.size: "1"
-  bookkeeper.ack.quorum.size: "1"
+  bookkeeper.ensemble.size: "3"
+  bookkeeper.write.quorum.size: "3"
+  bookkeeper.ack.quorum.size: "3"
   bookkeeper.write.timeout.milliseconds: "60000"
   bookkeeper.write.outstanding.bytes.max: "33554432"
 #  pravegaservice.cache.size.max: "1073741824"
