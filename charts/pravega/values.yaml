@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 
-version: 0.8.0-2600.4df7f9a4d-1.2-W8-2-e554360
+version: 0.9.0-2641.0c98b91cd
 zookeeperUri: 10.107.135.47:2181
 externalAccess:
   enabled: false
@@ -14,7 +14,7 @@ bookkeeperUri: 192.168.219.51:3181
 pravega:
   image:
     repository: devops-repo.isus.emc.com:8116/nautilus/pravega
-    tag: 0.8.0-2600.4df7f9a4d-1.2-W8-2-e554360
+    tag: 0.9.0-2641.0c98b91cd
   controllerReplicas: 2
   segmentStoreReplicas: 4
   debugLogging: false
@@ -48,8 +48,8 @@ options:
   bookkeeper.write.outstanding.bytes.max: "33554432"
 #  pravegaservice.cache.size.max: "1073741824"
   pravegaservice.cache.time.seconds.max: "600"
-#  pravegaservice.storage.layout: "CHUNKED_STORAGE"
-#  storage.appends.enable: "true"
+  pravegaservice.storage.layout: "ROLLING_STORAGE"
+  storage.appends.enable: "true"
   writer.flush.threshold.bytes: "67108864"
   writer.flush.size.bytes.max: "67108864"
   pravegaservice.container.count: "8"
