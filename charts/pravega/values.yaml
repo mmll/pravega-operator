@@ -20,7 +20,7 @@ pravega:
   debugLogging: false
   cacheVolumeRequest: 20Gi
   storage:
-    className: standard
+    className: baremetal-csi-sc-ssdlvg
   longtermStorage: pravega-tier2
 pravega_resources:
   controller:
