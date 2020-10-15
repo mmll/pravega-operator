@@ -46,7 +46,7 @@ options:
   bookkeeper.ack.quorum.size: "3"
   bookkeeper.write.timeout.milliseconds: "60000"
   bookkeeper.write.outstanding.bytes.max: "33554432"
-  pravegaservice.cache.size.max: "524288000"
+  pravegaservice.cache.size.max: "1073741824"
   pravegaservice.cache.time.seconds.max: "600"
   pravegaservice.storage.layout: "ROLLING_STORAGE"
   storage.appends.enable: "true"
