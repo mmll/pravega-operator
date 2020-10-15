@@ -80,4 +80,6 @@ options:
   controller.metrics.output.frequency.seconds: "10"
   pravegaservice.zk.connect.sessionTimeout.milliseconds: "30000"
   bookkeeper.zk.connect.sessionTimeout.milliseconds: "15000"
+  storageextra.noOp.mode.enable: "true"
+
 
