@@ -53,7 +53,7 @@ spec:
       storage.appends.enable: "true"
       bookkeeper.write.timeout.milliseconds: "60000"
       bookkeeper.write.outstanding.bytes.max: "33554432"
-      pravegaservice.cache.size.max: "1073741824"
+      pravegaservice.cache.size.max: "524288000"
       pravegaservice.cache.time.seconds.max: "600"
       writer.flush.threshold.bytes: "67108864"
       writer.flush.size.bytes.max: "67108864"
@@ -85,7 +85,7 @@ spec:
       controller.metrics.output.frequency.seconds: "10"
       pravegaservice.zk.connect.sessionTimeout.milliseconds: "30000"
       bookkeeper.zk.connect.sessionTimeout.milliseconds: "15000"
-      storageextra.noOp.mode.enable: "true"
+#      storageextra.noOp.mode.enable: "true"
     longtermStorage:
       ecs:
         configUri:  {{ .Values.pravega.longtermStorage.configUri }}
