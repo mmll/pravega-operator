@@ -53,5 +53,5 @@ spec:
         credentials: {{ .Values.pravega.longtermStorage.credentials }}
   {{- if .Values.options }}
   options:
-{{ toYaml .Values.options | indent 4 }}
+{{ toYaml .Values.options | indent 6 }}
   {{- end }}
