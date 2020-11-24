@@ -47,7 +47,7 @@ spec:
           storage: {{ .Values.pravega.cacheVolumeRequest }}
    {{- if .Values.options }}
     options:
-{{ toYaml .Values.options | indent 6 }}
+{{ toYaml .Values.options | indent 4 }}
    {{- end }}
     longtermStorage:
       ecs:
