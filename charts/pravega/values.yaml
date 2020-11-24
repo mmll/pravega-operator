@@ -21,7 +21,11 @@ pravega:
   cacheVolumeRequest: 20Gi
   storage:
     className: standard
-  longtermStorage: pravega-tier2
+  longtermStorage:
+    configUri: ""
+    bucket: ""
+    prefix: ""
+    credentials: ""
 pravega_resources:
   controller:
     limits:
