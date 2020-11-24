@@ -36,7 +36,7 @@ spec:
         memory: {{ .Values.pravega_resources.segment_store.requests.memory }}
     segmentStoreJVMOptions:
         {{- if .Values.segmentStoreJVMOptions }}
-{{ toYaml .Values.segmentStoreJVMOptions | indent 6 }}
+    {{ toYaml .Values.segmentStoreJVMOptions | indent 6 }}
         {{- end }}
     debugLogging: {{ .Values.pravega.debugLogging }}
     cacheVolumeClaimTemplate:
@@ -51,7 +51,7 @@ spec:
         bucket: {{  .Values.pravega.longtermStorage.bucket }}
         prefix: {{ .Values.pravega.longtermStorage.prefix }}
         credentials: {{ .Values.pravega.longtermStorage.credentials }}
-   options:
-     {{- if .Values.options }}
+    {{- if .Values.options }}
+    options:
  {{ toYaml .Values.options | indent 4 }}
      {{- end }}
