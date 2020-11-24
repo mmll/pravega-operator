@@ -34,10 +34,10 @@ spec:
       requests:
         cpu: {{ .Values.pravega_resources.segment_store.requests.cpu }}
         memory: {{ .Values.pravega_resources.segment_store.requests.memory }}
+    {{- if .Values.segmentStoreJVMOptions }}
     segmentStoreJVMOptions:
-        {{- if .Values.segmentStoreJVMOptions }}
-    {{ toYaml .Values.segmentStoreJVMOptions | indent 6 }}
-        {{- end }}
+{{ toYaml .Values.segmentStoreJVMOptions | indent 6 }}
+    {{- end }}
     debugLogging: {{ .Values.pravega.debugLogging }}
     cacheVolumeClaimTemplate:
       accessModes: [ "ReadWriteOnce" ]
@@ -53,5 +53,5 @@ spec:
         credentials: {{ .Values.pravega.longtermStorage.credentials }}
     {{- if .Values.options }}
     options:
- {{ toYaml .Values.options | indent 4 }}
-     {{- end }}
+{{ toYaml .Values.options | indent 4 }}
+    {{- end }}
