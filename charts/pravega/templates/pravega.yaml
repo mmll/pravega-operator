@@ -49,8 +49,8 @@ options:
   bookkeeper.ensemble.size: "3"
   bookkeeper.write.quorum.size: "3"
   bookkeeper.ack.quorum.size: "3"
-  pravegaservice.storage.layout: "ROLLING_STORAGE"
-  storage.appends.enable: "true"
+  pravegaservice.storage.layout: {{ .Values.pravega.options.pravegaservice.storage.layout }}
+  storage.appends.enable: {{ .Values.pravega.options.storage.appends.enable }}
   bookkeeper.write.timeout.milliseconds: "60000"
   bookkeeper.write.outstanding.bytes.max: "33554432"
   pravegaservice.cache.size.max: "1073741824"
@@ -64,22 +64,22 @@ options:
   controller.retention.threadCount: "4"
   log.level: "INFO"
   metrics.dynamicCache.size: "2000"
-  metrics.statistics.enable: "false"
+  metrics.statistics.enable: {{ .Values.pravega.options.metrics.statistics.enable }}
   metrics.statsD.reporter.enable: "false"
   metrics.statsD.connect.host: "10.109.190.185"
   metrics.statsD.connect.port: "8125"
   metrics.influxDB.reporter.enable: "true"
-  metrics.influxDB.connect.uri: "test"
+  metrics.influxDB.connect.uri: {{ .Values.pravega.options.metrics.influxDB.connectUri }}
   metrics.influxDB.connect.db.name: "pravega"
   metrics.influxDB.retention: "two_hour"
   metrics.output.frequency.seconds: "10"
   controller.metrics.dynamicCache.size: "2000"
-  controller.metrics.statistics.enable: "false"
+  controller.metrics.statistics.enable: {{ .Values.pravega.options.controller.metrics.statistics.enable }}
   controller.metrics.statsD.reporter.enable: "false"
   controller.metrics.statsD.connect.host: "10.109.190.185"
   controller.metrics.statsD.connect.port: "8125"
-  controller.metrics.influxDB.reporter.enable: "false"
-  controller.metrics.influxDB.connect.uri: "test"
+  controller.metrics.influxDB.reporter.enable: "true"
+  controller.metrics.influxDB.connect.uri: {{ .Values.pravega.options.metrics.influxDB.connectUri }}
   controller.metrics.influxDB.connect.db.name: "pravega"
   controller.metrics.influxDB.retention: "two_hour"
   controller.metrics.output.frequency.seconds: "10"
