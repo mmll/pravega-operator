@@ -51,7 +51,7 @@ spec:
         bucket: {{  .Values.pravega.longtermStorage.bucket }}
         prefix: {{ .Values.pravega.longtermStorage.prefix }}
         credentials: {{ .Values.pravega.longtermStorage.credentials }}
-    options:
-      {{- if .Values.options }}
+  options:
+    {{- if .Values.options }}
 {{ toYaml .Values.options | indent 4 }}
-      {{- end }}
+    {{- end }}

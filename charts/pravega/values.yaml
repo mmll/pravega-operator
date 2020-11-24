@@ -22,10 +22,6 @@ pravega:
   storage:
     className: standard
   longtermStorage:
-    configUri: ""
-    bucket: ""
-    prefix: ""
-    credentials: ""
 pravega_resources:
   controller:
     limits:
