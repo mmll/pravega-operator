@@ -25,30 +25,21 @@ pravega:
   options:
     metrics:
       influxDB:
-        reporterEnable: "true"
         connectUri: http://pravega-influxdb:8086
-      statistics:
-        enable: "true"
     controller:
       metrics:
-        statisticsEnable: "true"
         influxDB:
-          reporterEnable: "true"
           connectUri: http://pravega-influxdb:8086
 pravega_resources:
   controller:
     limits:
-      cpu: 500m
       memory: 1Gi
     requests:
-      cpu: 1000m
       memory: 1Gi
   segment_store:
     limits:
-      cpu: 2000m
       memory: 6Gi
     requests:
-      cpu: 1000m
       memory: 6Gi
 debugLogging: true
 segmentStoreJVMOptions: ["-Xmx2g", "-XX:MaxDirectMemorySize=3g","-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/"]
