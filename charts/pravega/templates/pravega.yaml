@@ -53,7 +53,7 @@ options:
   storage.appends.enable: {{ .Values.pravega.options.storage.appends.enable }}
   bookkeeper.write.timeout.milliseconds: "60000"
   bookkeeper.write.outstanding.bytes.max: "33554432"
-  pravegaservice.cache.size.max: "1073741824"
+  pravegaservice.cache.size.max: "536870912"
   pravegaservice.cache.time.seconds.max: "600"
   writer.flush.threshold.bytes: "67108864"
   writer.flush.size.bytes.max: "67108864"
