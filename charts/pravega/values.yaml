@@ -53,10 +53,10 @@ pravega_resources:
   segment_store:
     limits:
       cpu: 2000m
-      memory: 3Gi
+      memory: 5Gi
     requests:
       cpu: 1000m
-      memory: 3Gi
+      memory: 5Gi
 debugLogging: true
-segmentStoreJVMOptions: ["-Xmx1g", "-XX:MaxDirectMemorySize=1536m","-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/"]
+segmentStoreJVMOptions: ["-Xmx2g", "-XX:MaxDirectMemorySize=2g","-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/"]
 controllerJvmOptions: ["-Xms512m"]
