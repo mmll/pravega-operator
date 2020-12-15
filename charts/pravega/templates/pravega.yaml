@@ -90,4 +90,4 @@ spec:
         configUri:  {{ .Values.pravega.longtermStorage.configUri }}
         bucket: {{  .Values.pravega.longtermStorage.bucket }}
         prefix: {{ .Values.pravega.longtermStorage.prefix }}
-        credentials: {{ .Values.pravega.longtermStorage.credentgials }}
+        credentials: {{ .Values.pravega.longtermStorage.credentials }}
