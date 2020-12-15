@@ -41,24 +41,20 @@ pravega:
     controller.retention.threadCount: "4"
     log.level: "INFO"
     metrics.dynamicCache.size: "2000"
-    #metrics.statistics.enable: {{ .Values.pravega.options.metrics.statistics.enable }}
     metrics.statistics.enable: "false"
     metrics.statsD.reporter.enable: "false"
     metrics.statsD.connect.host: "10.109.190.185"
     metrics.statsD.connect.port: "8125"
-    #metrics.influxDB.reporter.enable: {{ .Values.pravega.options.metrics.influxDB.reporterEnable }}
     metrics.influxDB.reporter.enable: "false"
     metrics.influxDB.connect.uri: http://pravega-influxdb:8086
     metrics.influxDB.connect.db.name: "pravega"
     metrics.influxDB.retention: "two_hour"
     metrics.output.frequency.seconds: "10"
     controller.metrics.dynamicCache.size: "2000"
-    #controller.metrics.statistics.enable: {{ .Values.pravega.options.controller.metrics.statistics.enable }}
     controller.metrics.statistics.enable: "false"
     controller.metrics.statsD.reporter.enable: "false"
     controller.metrics.statsD.connect.host: "10.109.190.185"
     controller.metrics.statsD.connect.port: "8125"
-    #controller.metrics.influxDB.reporter.enable: {{ .Values.pravega.options.controller.metrics.influxDB.reporterEnable }}
     controller.metrics.influxDB.reporter.enable: "false"
     controller.metrics.influxDB.connect.uri: http://pravega-influxdb:8086
     controller.metrics.influxDB.connect.db.name: "pravega"
