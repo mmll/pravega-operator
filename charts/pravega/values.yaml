@@ -23,25 +23,69 @@ pravega:
     className: standard
   longtermStorage: pravega-tier2
   options:
-    metrics:
-      influxDB:
-        reporterEnable: false
-        connectUri: http://pravega-influxdb:8086
-      statistics:
-        enable: false
-    storage:
-      appends:
-        enable: false
-    pravegaservice:
-      storage:
-        layout: CHUNKED_STORAGE
-    controller:
-      metrics:
-        statistics:
-          enable: false
-        influxDB:
-          reporterEnable: false
-          connectUri: http://pravega-influxdb:8086
+    bookkeeper.ensemble.size: "3"
+    bookkeeper.write.quorum.size: "3"
+    bookkeeper.ack.quorum.size: "3"
+    pravegaservice.storage.layout: CHUNKED_STORAGE
+    storage.appends.enable: "false"
+    bookkeeper.write.timeout.milliseconds: "60000"
+    bookkeeper.write.outstanding.bytes.max: "33554432"
+    pravegaservice.cache.size.max: "2147483648"
+    pravegaservice.cache.time.seconds.max: "600"
+    writer.flush.threshold.bytes: "67108864"
+    writer.flush.size.bytes.max: "67108864"
+    pravegaservice.container.count: "32"
+    controller.containerCount: "32"
+    controller.retention.bucketCount: "8"
+    controller.service.asyncTaskPoolSize: "20"
+    controller.retention.threadCount: "4"
+    log.level: "INFO"
+    metrics.dynamicCache.size: "2000"
+    #metrics.statistics.enable: {{ .Values.pravega.options.metrics.statistics.enable }}
+    metrics.statistics.enable: "false"
+    metrics.statsD.reporter.enable: "false"
+    metrics.statsD.connect.host: "10.109.190.185"
+    metrics.statsD.connect.port: "8125"
+    #metrics.influxDB.reporter.enable: {{ .Values.pravega.options.metrics.influxDB.reporterEnable }}
+    metrics.influxDB.reporter.enable: "false"
+    metrics.influxDB.connect.uri: http://pravega-influxdb:8086
+    metrics.influxDB.connect.db.name: "pravega"
+    metrics.influxDB.retention: "two_hour"
+    metrics.output.frequency.seconds: "10"
+    controller.metrics.dynamicCache.size: "2000"
+    #controller.metrics.statistics.enable: {{ .Values.pravega.options.controller.metrics.statistics.enable }}
+    controller.metrics.statistics.enable: "false"
+    controller.metrics.statsD.reporter.enable: "false"
+    controller.metrics.statsD.connect.host: "10.109.190.185"
+    controller.metrics.statsD.connect.port: "8125"
+    #controller.metrics.influxDB.reporter.enable: {{ .Values.pravega.options.controller.metrics.influxDB.reporterEnable }}
+    controller.metrics.influxDB.reporter.enable: "false"
+    controller.metrics.influxDB.connect.uri: http://pravega-influxdb:8086
+    controller.metrics.influxDB.connect.db.name: "pravega"
+    controller.metrics.influxDB.retention: "two_hour"
+    controller.metrics.output.frequency.seconds: "10"
+    pravegaservice.zk.connect.sessionTimeout.milliseconds: "30000"
+    bookkeeper.zk.connect.sessionTimeout.milliseconds: "15000"
+#  options:
+#    metrics:
+#      influxDB:
+#        reporterEnable: false
+#        connectUri: http://pravega-influxdb:8086
+#      statistics:
+#        enable: false
+#    storage:
+#      appends:
+#        enable: false
+#    pravegaservice:
+#      storage:
+#        layout: CHUNKED_STORAGE
+#    controller:
+#      metrics:
+#        statistics:
+#          enable: false
+#        influxDB:
+#          reporterEnable: false
+#          connectUri: http://pravega-influxdb:8086
 pravega_resources:
   controller:
     limits:
