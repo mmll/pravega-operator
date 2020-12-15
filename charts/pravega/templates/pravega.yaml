@@ -45,10 +45,10 @@ spec:
       resources:
         requests:
           storage: {{ .Values.pravega.cacheVolumeRequest }}
-    { { - if .Values.options } }
+    {{- if .Values.options }}
     options:
-{ { toYaml .Values.options | indent 6 } }
-    { { - end } }
+{{ toYaml .Values.options | indent 6 }}
+    {{- end }}
     longtermStorage:
       ecs:
         configUri:  {{ .Values.pravega.longtermStorage.configUri }}
