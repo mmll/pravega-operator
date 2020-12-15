@@ -25,22 +25,22 @@ pravega:
   options:
     metrics:
       influxDB:
-        reporterEnable: "false"
+        reporterEnable: false
         connectUri: http://pravega-influxdb:8086
       statistics:
-        enable: "false"
+        enable: false
     storage:
       appends:
-        enable: "false"
+        enable: false
     pravegaservice:
       storage:
-        layout: "CHUNKED_STORAGE"
+        layout: CHUNKED_STORAGE
     controller:
       metrics:
         statistics:
-          enable: "false"
+          enable: false
         influxDB:
-          reporterEnable: "false"
+          reporterEnable: false
           connectUri: http://pravega-influxdb:8086
 pravega_resources:
   controller:
