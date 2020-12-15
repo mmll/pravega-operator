@@ -30,7 +30,7 @@ pravega:
     storage.appends.enable: "false"
     bookkeeper.write.timeout.milliseconds: "60000"
     bookkeeper.write.outstanding.bytes.max: "33554432"
-    pravegaservice.cache.size.max: "2147483648"
+    pravegaservice.cache.size.max: "536870912"
     pravegaservice.cache.time.seconds.max: "600"
     writer.flush.threshold.bytes: "67108864"
     writer.flush.size.bytes.max: "67108864"
@@ -41,24 +41,20 @@ pravega:
     controller.retention.threadCount: "4"
     log.level: "INFO"
     metrics.dynamicCache.size: "2000"
-    #metrics.statistics.enable: {{ .Values.pravega.options.metrics.statistics.enable }}
     metrics.statistics.enable: "false"
     metrics.statsD.reporter.enable: "false"
     metrics.statsD.connect.host: "10.109.190.185"
     metrics.statsD.connect.port: "8125"
-    #metrics.influxDB.reporter.enable: {{ .Values.pravega.options.metrics.influxDB.reporterEnable }}
     metrics.influxDB.reporter.enable: "false"
     metrics.influxDB.connect.uri: http://pravega-influxdb:8086
     metrics.influxDB.connect.db.name: "pravega"
     metrics.influxDB.retention: "two_hour"
     metrics.output.frequency.seconds: "10"
     controller.metrics.dynamicCache.size: "2000"
-    #controller.metrics.statistics.enable: {{ .Values.pravega.options.controller.metrics.statistics.enable }}
     controller.metrics.statistics.enable: "false"
     controller.metrics.statsD.reporter.enable: "false"
     controller.metrics.statsD.connect.host: "10.109.190.185"
     controller.metrics.statsD.connect.port: "8125"
-    #controller.metrics.influxDB.reporter.enable: {{ .Values.pravega.options.controller.metrics.influxDB.reporterEnable }}
     controller.metrics.influxDB.reporter.enable: "false"
     controller.metrics.influxDB.connect.uri: http://pravega-influxdb:8086
     controller.metrics.influxDB.connect.db.name: "pravega"
@@ -96,11 +92,11 @@ pravega_resources:
       memory: 1Gi
   segment_store:
     limits:
-      cpu: 4000m
-      memory: 7Gi
+      cpu: 2000m
+      memory: 3Gi
     requests:
-      cpu: 4000m
-      memory: 7Gi
+      cpu: 1000m
+      memory: 3Gi
 debugLogging: true
-segmentStoreJVMOptions: ["-Xmx2g", "-XX:MaxDirectMemorySize=4g","-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/"]
+segmentStoreJVMOptions: ["-Xmx1g", "-XX:MaxDirectMemorySize=1536m","-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/"]
 controllerJvmOptions: ["-Xms512m"]
