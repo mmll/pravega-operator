@@ -35,9 +35,9 @@ spec:
         cpu: {{ .Values.pravega_resources.segment_store.requests.cpu }}
         memory: {{ .Values.pravega_resources.segment_store.requests.memory }}
     segmentStoreJVMOptions:
-      {{- if .Values.segmentStoreJVMOptions }}
+        {{- if .Values.segmentStoreJVMOptions }}
 {{ toYaml .Values.segmentStoreJVMOptions | indent 6 }}
-      {{- end }}
+        {{- end }}
     debugLogging: {{ .Values.pravega.debugLogging }}
     cacheVolumeClaimTemplate:
       accessModes: [ "ReadWriteOnce" ]
