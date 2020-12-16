@@ -46,14 +46,14 @@ spec:
         requests:
           storage: {{ .Values.pravega.cacheVolumeRequest }}
     options:
-      bookkeeper.ensemble.size: "1"
-      bookkeeper.write.quorum.size: "1"
-      bookkeeper.ack.quorum.size: "1"
-#      pravegaservice.storage.layout: "CHUNKED_STORAGE"
-#      storage.appends.enable: "true"
+      bookkeeper.ensemble.size: "3"
+      bookkeeper.write.quorum.size: "3"
+      bookkeeper.ack.quorum.size: "3"
+      pravegaservice.storage.layout: "CHUNKED_STORAGE"
+      storage.appends.enable: "false"
       bookkeeper.write.timeout.milliseconds: "60000"
       bookkeeper.write.outstanding.bytes.max: "33554432"
-#      pravegaservice.cache.size.max: "1073741824"
+      pravegaservice.cache.size.max: "1073741824"
       pravegaservice.cache.time.seconds.max: "600"
       writer.flush.threshold.bytes: "67108864"
       writer.flush.size.bytes.max: "67108864"
